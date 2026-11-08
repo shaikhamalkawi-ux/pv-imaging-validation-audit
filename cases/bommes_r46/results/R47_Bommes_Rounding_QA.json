@@ -1,0 +1,9 @@
+{
+  "task_count": 9,
+  "two_classifier_cond_rows": 27,
+  "sign_reversals_target_best_vs_both_other_plant": 3,
+  "all_three_sign_flips_robust_to_0_005_per_source_cell": true,
+  "method": "deterministic interval sign check, not sampling CI, hypothesis test or causal model effect",
+  "source_cells": 54,
+  "source_sha256": "7fbcf79eb0f27f9555d24fb86a51f1b90607220b13a32bb5f042b6085425a872"
+}

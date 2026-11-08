@@ -1,0 +1,263 @@
+{
+  "project": "99pv",
+  "version": "R54_GITHUB_READY_NOT_YET_PUSHED",
+  "upstream_raw_sandia_sha256": "8fe450440d989f9aa469f0fc206c76b13021a93dbb6071ddc3a1967fd083440e",
+  "files": {
+    ".github/workflows/public-checks.yml": {
+      "bytes": 655,
+      "sha256": "36e70f68be72904b866a89c66e4f0d3bde92c6a3cb0158f728f27a87f777e29e"
+    },
+    ".gitignore": {
+      "bytes": 335,
+      "sha256": "8c10107e706996a95ab633a7c9614a34e5c66d2561ea112780132a72f347e019"
+    },
+    "CHANGELOG.md": {
+      "bytes": 1066,
+      "sha256": "cd6cd6402440eab4606a2764d08f9dc190a62479fa846fe7796324905830c183"
+    },
+    "CITATION.md": {
+      "bytes": 1408,
+      "sha256": "74349ec9a6310bcfcd99432de375380e9f861d0b28c038b7b1bdef8d9a5cc87e"
+    },
+    "DATA_AND_RIGHTS.md": {
+      "bytes": 1752,
+      "sha256": "f26492569639f286200f0f7fb8230c3d966a7a92a546d88fce8c540d9321c0e4"
+    },
+    "LICENSE_STATUS.md": {
+      "bytes": 677,
+      "sha256": "4058ae10da323034f22b605ebeb98d13e974aadaedbe57559c2608a8af640378"
+    },
+    "PUBLICATION_STATUS.md": {
+      "bytes": 2069,
+      "sha256": "41fa0d674d44718eb71cce47ff4d579e487f5dc67fb3362cfb0438639d73d19c"
+    },
+    "README.md": {
+      "bytes": 3793,
+      "sha256": "186eb28ee37ef0c75f54251b3468c7966a53820446c6f35151f450465d4b89af"
+    },
+    "REPRODUCE.md": {
+      "bytes": 2562,
+      "sha256": "f6523a13c0cc2fb8e8574ffbc570ff11ac1b83b1301dbda1c2e15043775bfe55"
+    },
+    "cases/benchmarkel_r50b/BENCHMARKEL_PARSER_SELFTEST.json": {
+      "bytes": 163,
+      "sha256": "ab9aee667690cdc87f26171790ab757494f7c9fff4b93a54107f0bcccd38438c"
+    },
+    "cases/benchmarkel_r50b/BENCHMARKEL_SCIENTIFIC_ADDENDUM.md": {
+      "bytes": 8486,
+      "sha256": "ef3728cda8b06b325b479984ebbe51e241d80849fbe1cb14b3e00555cb2596d8"
+    },
+    "cases/benchmarkel_r50b/benchmarkel_connector_replay_results.json": {
+      "bytes": 3838,
+      "sha256": "3cb0fbae64b38934d3daa2442ebec90b8b34e050bd816f9b153afe659b901d46"
+    },
+    "cases/benchmarkel_r50b/benchmarkel_git_tree_audit.py": {
+      "bytes": 7103,
+      "sha256": "1c972c127913ba6df4c13556d0748615f24c264bda1c2fde84281af005e31b4e"
+    },
+    "cases/bommes_r46/code/build_contract.py": {
+      "bytes": 8963,
+      "sha256": "2d30c4e858023a1264ff545244944de8dbba3395c25d2bde4dfa1eff7906461b"
+    },
+    "cases/bommes_r46/code/build_figure.py": {
+      "bytes": 1665,
+      "sha256": "201d04b23578ac0a63bd8c7bee6e9280250e72d0e650c040e8b7443d45611cbd"
+    },
+    "cases/bommes_r46/code/reproduce.py": {
+      "bytes": 5459,
+      "sha256": "b88b39430171fe5ac0d4d65bb1dacd9cb645d06138b45ad16b23eb7734f4ec57"
+    },
+    "cases/bommes_r46/paper/bommes_selection_condition.pdf": {
+      "bytes": 15110,
+      "sha256": "c6dc91171077a1c9fd9db776c730bb90f80afe99d07a208d3d70ddf011e2ccb1"
+    },
+    "cases/bommes_r46/reproduce_rounding_from_author_zip.py": {
+      "bytes": 1562,
+      "sha256": "299511dcfa2f8a96c76bc5a2218625db898e1a3d93ee7f60bf0ad3e58cbcbfff"
+    },
+    "cases/bommes_r46/results/Bommes_36_TargetBestMinusOtherPlantVal_Differences.csv": {
+      "bytes": 1848,
+      "sha256": "831ea1f1283e8ce3537ad078aa68a184677a7903ef2c982edf90be28a8f0eead"
+    },
+    "cases/bommes_r46/results/Bommes_9Task_SelectionCondition_Matrix.csv": {
+      "bytes": 1065,
+      "sha256": "56251d1465dbc92c437674abf18a3e1a4cd1e956d70b23243fb5b36a0e4cd3bd"
+    },
+    "cases/bommes_r46/results/R46_Independent_CalculationQA.json": {
+      "bytes": 1586,
+      "sha256": "ac0fc0634cbfcf89c95ce28d23bf1681c6264f3156a0cfcd4813e0e322a502f6"
+    },
+    "cases/bommes_r46/results/R47_Bommes_RoundingSign_Robustness_27Conditions.csv": {
+      "bytes": 1748,
+      "sha256": "4bea035607d86deedac9ea6b95599eb6ac314fd4d0f3cab01dd26471f2d1c916"
+    },
+    "cases/bommes_r46/results/R47_Bommes_Rounding_QA.json": {
+      "bytes": 390,
+      "sha256": "43340f05a004262ebd13319b8f84d5027cceeddf93f89c487d7209822c476b0f"
+    },
+    "cases/bommes_r46/results/claim_admission_tests.json": {
+      "bytes": 317,
+      "sha256": "e05a912d84eb9ce304ce0963663df5cca62fb0c1ad5898efadcf915918b2be43"
+    },
+    "cases/bommes_r46/results/example_claim_records.json": {
+      "bytes": 4333,
+      "sha256": "8500c876dbdc4363262d3a3530f87266a447101fa317b5bc65221e210857532d"
+    },
+    "cases/bommes_r46/results/experiment_claim_record.schema.json": {
+      "bytes": 3524,
+      "sha256": "270adff29408a289c70dc909bdbd171ab8fff39ba589171e188785fac768e0ad"
+    },
+    "cases/bommes_r46/source_inputs/Bommes2022_Table5_54_SourceExtract_OriginalPublishedNumbers.csv": {
+      "bytes": 15907,
+      "sha256": "7fbcf79eb0f27f9555d24fb86a51f1b90607220b13a32bb5f042b6085425a872"
+    },
+    "cases/sandia_r50/audit_original_AnonDB.py": {
+      "bytes": 5400,
+      "sha256": "066ce7703800c1c20d712dee98a4654045c7a0e201bc6407a17efbfd81a47139"
+    },
+    "cases/sandia_r50/fixed_count_certificate.json": {
+      "bytes": 1902,
+      "sha256": "ba193cb9f9b3f5e8ea3a91b3b50e95b68f07bde4dc57b8ec39cb76df2a78a4f6"
+    },
+    "cases/sandia_r50/sandia_fixed_count_certificate.py": {
+      "bytes": 3027,
+      "sha256": "e8f81ab3714ec4e724ae213e326c2c85ae626ee2c78625f117f4b3ea2c57c6ab"
+    },
+    "cases/sandia_r50/test_certificates.py": {
+      "bytes": 3365,
+      "sha256": "a2d57f4ca17329129f4dc403dc13bb516a7f4b84e7eb8d0a788b0aff00d88fe7"
+    },
+    "cases/sandia_r50/test_results.json": {
+      "bytes": 580,
+      "sha256": "20c4dda8181345607cab59b107d5f947977d0ae21b010a97d2ddf7d4b9b939bb"
+    },
+    "cases/sandia_r52/EXPLORATORY_SUBGROUP_PROTOCOL.md": {
+      "bytes": 937,
+      "sha256": "4fc01b4a9897cd73bc59df1b13fc8b465c8d9945d48f0575f9810cae4d3f27cf"
+    },
+    "cases/sandia_r52/PREOUTCOME_PROTOCOL_LOCK.md": {
+      "bytes": 4154,
+      "sha256": "dba0dc2424c8a2bcbf9c1028107e01007d60929005c89a680ba27db54e72b7bc"
+    },
+    "cases/sandia_r52/R52_SCIENTIFIC_REPORT.md": {
+      "bytes": 9384,
+      "sha256": "8ca56aab06c3bf613b283ad0edea3836a5b84617fcafbdf47aa46e316e41ae84"
+    },
+    "cases/sandia_r52/REPRODUCE_FROM_FRESH_EXTRACTION.md": {
+      "bytes": 1374,
+      "sha256": "274cffc2051b27281f6907f76327991bad8a281d5f7f51e0f1806fbb47ecae9f"
+    },
+    "cases/sandia_r52/qa/R52_INDEPENDENT_QA.json": {
+      "bytes": 2577,
+      "sha256": "efb8e2ff72bb59e2540d0f361b0f4ab2f2f4241108669c4cfb3a33f995e29822"
+    },
+    "cases/sandia_r52/results/R52_ALL_200_SPLITS_METRICS.csv": {
+      "bytes": 58315,
+      "sha256": "7cf54ca5216a5429f9f4fa8cb64fc6e20de48a9c404ed4bf9eeccd87e4596f2b"
+    },
+    "cases/sandia_r52/results/R52_EXPLORATORY_RUN_STDOUT.txt": {
+      "bytes": 2075,
+      "sha256": "c4b4e21ba16ccc1a2244bd307da28fd61154053ff0efe904344497699f657631"
+    },
+    "cases/sandia_r52/results/R52_EXPLORATORY_SEEN_UNSEEN_100_SPLITS.csv": {
+      "bytes": 12478,
+      "sha256": "28d9de2018cac39db69a88aaff62b9fc8ca68d3f70e26baeec6e1130b85c2472"
+    },
+    "cases/sandia_r52/results/R52_EXPLORATORY_SUBGROUP_SUMMARY.json": {
+      "bytes": 2075,
+      "sha256": "c4b4e21ba16ccc1a2244bd307da28fd61154053ff0efe904344497699f657631"
+    },
+    "cases/sandia_r52/results/R52_EXPLORATORY_WITHIN_TEST_FIGURE.png": {
+      "bytes": 56422,
+      "sha256": "17f64fddc3447c9615db95c6854b0cafd282883cfe0628263f66c7981940c2e8"
+    },
+    "cases/sandia_r52/results/R52_METADATA_ONLY_MAE_FIGURE.png": {
+      "bytes": 71306,
+      "sha256": "4c95322a3f21f5c06390ff018ead7d6805177a4b6ef3260cbbb29012912e93f0"
+    },
+    "cases/sandia_r52/results/R52_RUN_STDOUT.txt": {
+      "bytes": 3615,
+      "sha256": "51b73cb0f1cd85fc4bf62dbf6f794a81dfd471558b16faa39a8c35b9260603f5"
+    },
+    "cases/sandia_r52/results/R52_SUMMARY.json": {
+      "bytes": 5180,
+      "sha256": "8812c9a228cfe0d812a7cf930d75052a14b16c08563d9b0f7f8bb4631a8c78da"
+    },
+    "cases/sandia_r52/src/make_figures.py": {
+      "bytes": 2060,
+      "sha256": "95b782cbf7900daaa666c58edf45fb0143b770cc8401238d87e8b40c7208a016"
+    },
+    "cases/sandia_r52/src/run_metadata_control.py": {
+      "bytes": 10668,
+      "sha256": "f3900b6f967bafff531933ddaf0e21319b8e6590f878c432c878901962ff3b41"
+    },
+    "cases/sandia_r52/src/seen_unseen_exploratory.py": {
+      "bytes": 5073,
+      "sha256": "b2bc1fc3c9e05720fb49b7c26dfa9b7c6d71b5ff53fea84994ec447c7daceaee"
+    },
+    "cases/sandia_r53_pending/R53_PIXEL_EXPERIMENT_PRE_ANALYSIS_DESIGN_LOCK.md": {
+      "bytes": 6806,
+      "sha256": "7b5f1157a32a4e43218f87b9c4a1d83750602dab07370c24f61c47bfdb61e83a"
+    },
+    "cases/sandia_r53_pending/R53_PREIMAGE_DESIGN_QA.json": {
+      "bytes": 1636,
+      "sha256": "b09837012992aba08f2d17046c34a1a26fbe381e079890699f0bdd64be2c3484"
+    },
+    "cases/sandia_r53_pending/src/run_R53_on_original_EL_pixels.py": {
+      "bytes": 13250,
+      "sha256": "57e22f4e77eb74129f1bfdc18e3574cb8480a3a0a9d28b20cc99da00fceac944"
+    },
+    "docs/PAPER_CODE_AVAILABILITY_INSERTION.md": {
+      "bytes": 946,
+      "sha256": "4d06202356c80696a6ed1fc6087b8f53d2a6653f18656c273baf8015721f9bba"
+    },
+    "docs/REPOSITORY_NOT_YET_CREATED.md": {
+      "bytes": 773,
+      "sha256": "448b8e5408933011f1e8cf4088a96fa5b0bcb0b79c630f0217906c6a77703ca3"
+    },
+    "docs/SCIENTIFIC_ABSTENTION_RULES.md": {
+      "bytes": 1241,
+      "sha256": "ad7439ba789ea4833bffe6c42033273710538bc7d976b5cdbb5438c4cd17c625"
+    },
+    "paper/R54_WORKING_MAIN.pdf": {
+      "bytes": 467086,
+      "sha256": "5b6c0791aa2ca3a2d0f802c2b3a3a43c1b4e24c6eebbd5b5fcef1ac981ff6327"
+    },
+    "paper/R54_WORKING_MAIN.tex": {
+      "bytes": 43409,
+      "sha256": "e3a84093eb81c90f80b0d4f07f5c3864bcbe3f11d56b051a35dc82456dc122d3"
+    },
+    "paper/R54_WORKING_SUPPLEMENT.pdf": {
+      "bytes": 315591,
+      "sha256": "0a8b72e06af8a83f268455ff9450860fd8eaf97617cb5d0e111747a6dd3ac49b"
+    },
+    "paper/R54_WORKING_SUPPLEMENT.tex": {
+      "bytes": 9989,
+      "sha256": "74acc6af6a6c5a746b45c93d66bafe2d0cc02ef5d396f0b8183c2453e417d90c"
+    },
+    "paper/archive/R47_WORKING_MANUSCRIPT_7P_READONLY.pdf": {
+      "bytes": 386746,
+      "sha256": "1070ef6b4ada85175151a0614dfe524dcba3a4ca49c4dab5a95960010a736c20"
+    },
+    "paper/figures/figure_bommes_condition.pdf": {
+      "bytes": 15110,
+      "sha256": "c6dc91171077a1c9fd9db776c730bb90f80afe99d07a208d3d70ddf011e2ccb1"
+    },
+    "paper/figures/figure_sandia_module_overlap.pdf": {
+      "bytes": 12720,
+      "sha256": "16791b89edf9746608e28d8458dfa4fe8523cb92de5ccec4642d6adb31ef7146"
+    },
+    "requirements.txt": {
+      "bytes": 267,
+      "sha256": "06ac3bbb3e628414d787f5d51cf75afa925e3472be4b54ebfc019ca1cbe016ac"
+    },
+    "results/experiment_claim_matrix.json": {
+      "bytes": 2948,
+      "sha256": "0f8036954c8657fd316089f508465d5de6e62c51002aaeaab124194c52130fe0"
+    },
+    "tests/verify_public.py": {
+      "bytes": 3730,
+      "sha256": "3d0f42810e863caa43ca500a490c87c5a8609b5c90102ee5d937124c4a2f1d45"
+    }
+  }
+}

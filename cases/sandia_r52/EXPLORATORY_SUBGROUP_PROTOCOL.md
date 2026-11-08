@@ -1,0 +1,4 @@
+# 99pv R52B — exploratory within-test seen versus unseen module support
+Defined 2026-11-08 **after** the R52 primary model MAE was inspected but **before** these subgroup errors were computed. Mark EXPLORATORY, not preregistered confirmatory evidence.
+
+On each one of R52's fixed 100 random-row partitions only, refit the unchanged R52 non-ID Ridge on the SAME train rows and compute predictions for exactly the same test rows. Segment test rows by whether their `Mod_ID` is also present in the train set (seen) or not (unseen). Report mean absolute error in **Pmp/nameplate percentage points** and watts across each segment, plus group-wise equal-weight-per-test-module mean error. Paired descriptive seen-minus-unseen errors across seeds are NOT a causal effect: module category, exposure and target distribution may differ. Do not change R52 source eligibility, features, Ridge alpha, target, split seed or any frozen primary file.

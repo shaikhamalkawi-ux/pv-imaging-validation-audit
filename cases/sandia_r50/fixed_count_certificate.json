@@ -1,0 +1,36 @@
+{
+  "project": "99pv",
+  "stage": "R50_FIXED_COUNTS_ONLY",
+  "source_url": "https://data.openei.org/submissions/8378",
+  "dataset_doi": "10.11578/3818365",
+  "source_basis": "official descriptive counts only; original AnonDB.csv NOT obtained",
+  "N_reported_measurement_sets": 613,
+  "G_reported_unique_modules": 438,
+  "repeated_measurement_excess_D": 175,
+  "number_of_repeated_module_IDs_range": [
+    1,
+    175
+  ],
+  "number_of_measurement_sets_from_repeated_module_IDs_range": [
+    176,
+    350
+  ],
+  "train_rows_for_hypothetical_exact_fixed_split": 490,
+  "test_rows_for_hypothetical_exact_fixed_split": 123,
+  "design": "uniformly random exact 490/123 measurement-row split; hypothetical only",
+  "expected_count_of_distinct_shared_modules_min": "0.9999999999999999999977069534490589971669515767619174208",
+  "min_extremal_configuration": "1 module has 176 measurement sets; remaining 437 modules have 1 each",
+  "expected_count_of_distinct_shared_modules_max": "56.22860889869814157310558807536064996961264114128522535",
+  "max_extremal_configuration": "175 modules have 2 measurement sets; remaining 263 have 1 each",
+  "probability_one_pair_straddles_fixed_split": "0.3213063365639893804177462175734894283977865208073441448",
+  "formula": "sum over physical modules j of {1-[C(T,n_j)+C(S,n_j)]/C(N,n_j)}, with C(t,k)=0 if t<k",
+  "sharpness_proof": "f(k) is nondecreasing and discretely concave in k>=1, f(1)=0; with D=N-G excess rows, the minimum occurs when all excess rows belong to one module, and the maximum when D separate modules each have exactly two observations",
+  "not_observed": [
+    "actual Mod_ID multiplicity histogram",
+    "any actual random split",
+    "actual cross-split overlap",
+    "any model accuracy or change in prediction performance",
+    "site-level independence or leakage in a published experiment"
+  ],
+  "strict_hold": "HOLD_RAW_METADATA_ANONDB_CSV"
+}

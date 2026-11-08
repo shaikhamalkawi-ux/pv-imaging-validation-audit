@@ -1,0 +1,66 @@
+{
+  "source_original_sha256": "8fe450440d989f9aa469f0fc206c76b13021a93dbb6071ddc3a1967fd083440e",
+  "preoutcome_protocol_sha256": "dba0dc2424c8a2bcbf9c1028107e01007d60929005c89a680ba27db54e72b7bc",
+  "exploratory_protocol_sha256": "4fc01b4a9897cd73bc59df1b13fc8b465c8d9945d48f0575f9810cae4d3f27cf",
+  "primary_original_source_rows": 616,
+  "primary_eligible_rows": 598,
+  "primary_unique_Mod_ID": 420,
+  "excluded_rows": 18,
+  "primary_split_rows": 200,
+  "all_group_splits_zero_Mod_ID_overlap": true,
+  "all_random_splits_positive_Mod_ID_overlap": true,
+  "R52_primary_results_clean_replay_byte_identical": true,
+  "replay_member_matches": [
+    {
+      "file": "R52_ALL_200_SPLITS_METRICS.csv",
+      "unchanged": true,
+      "sha256": "7cf54ca5216a5429f9f4fa8cb64fc6e20de48a9c404ed4bf9eeccd87e4596f2b",
+      "size": 58315
+    },
+    {
+      "file": "R52_SUMMARY.json",
+      "unchanged": true,
+      "sha256": "8812c9a228cfe0d812a7cf930d75052a14b16c08563d9b0f7f8bb4631a8c78da",
+      "size": 5180
+    },
+    {
+      "file": "R52_RUN_STDOUT.txt",
+      "unchanged": true,
+      "sha256": "51b73cb0f1cd85fc4bf62dbf6f794a81dfd471558b16faa39a8c35b9260603f5",
+      "size": 3615
+    },
+    {
+      "file": "R52_EXPLORATORY_SEEN_UNSEEN_100_SPLITS.csv",
+      "unchanged": true,
+      "sha256": "28d9de2018cac39db69a88aaff62b9fc8ca68d3f70e26baeec6e1130b85c2472",
+      "size": 12478
+    },
+    {
+      "file": "R52_EXPLORATORY_SUBGROUP_SUMMARY.json",
+      "unchanged": true,
+      "sha256": "c4b4e21ba16ccc1a2244bd307da28fd61154053ff0efe904344497699f657631",
+      "size": 2075
+    },
+    {
+      "file": "R52_EXPLORATORY_RUN_STDOUT.txt",
+      "unchanged": true,
+      "sha256": "c4b4e21ba16ccc1a2244bd307da28fd61154053ff0efe904344497699f657631",
+      "size": 2075
+    }
+  ],
+  "R52_exploratory_Ridge_reproduces_primary_100_of_100": true,
+  "nonimage_pmp_target": true,
+  "no_fault_detector_scores": true,
+  "random_ridge_MAE_pctpt_mean": 0.8649965134666923,
+  "grouped_ridge_MAE_pctpt_mean": 0.8789932610681127,
+  "row_minus_group_mean_pctpt": -0.013996747601420514,
+  "row_minus_group_minmax_pctpt": [
+    -0.30412595197655135,
+    0.2723317926120412
+  ],
+  "row_random_lower_than_grouped_n_seeds": 57,
+  "two_partition_types_use_distinct_modules_by_design_not_direct_causal_comparison": true,
+  "within_row_random_exploratory_seen_MAE_pctpt": 0.8125391211154087,
+  "within_row_random_exploratory_unseen_MAE_pctpt": 0.9117977837512653,
+  "boundary": "Nonimaging metadata electrical prediction only; no actual image/IV pixel, defect label, leakage or external site result."
+}

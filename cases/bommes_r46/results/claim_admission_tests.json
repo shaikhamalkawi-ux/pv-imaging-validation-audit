@@ -1,0 +1,12 @@
+{
+  "real_source_examples": 4,
+  "statuses": [
+    "REJECT_STRONGER_CLAIM",
+    "ALLOW_AUTHOR_REPORTED_ONLY",
+    "HOLD_RAW_PARENT_BRIDGE",
+    "ALLOW_AUTHOR_REPORTED_ONLY"
+  ],
+  "synthetic_logic_tests": 2,
+  "PASS": true,
+  "scope": "Claim-bounding gates only; no raw PV data replay and no formal certification."
+}

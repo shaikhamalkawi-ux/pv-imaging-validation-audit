@@ -1,0 +1,5 @@
+{
+  "synthetic_filename_parser_test": "PASS",
+  "checks": 10,
+  "scope": "synthetic-only; direct live GitHub API audit done separately via authorized connector"
+}

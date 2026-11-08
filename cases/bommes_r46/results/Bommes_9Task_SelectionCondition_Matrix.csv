@@ -1,0 +1,10 @@
+source_plant,target_plant,task,contrastive_val0,crossentropy_val0,contrastive_minus_crossentropy_val0,contrastive_val1,crossentropy_val1,contrastive_minus_crossentropy_val1,contrastive_best_target,crossentropy_best_target,contrastive_minus_crossentropy_best_target,selected_winner_val0,selected_winner_val1,selected_winner_target_best,winner_reversal_vs_both_validation_selectors
+A,B,A -> B,78.83,74.68,4.15,79.62,77.76,1.86,80.38,78.19,2.19,C,C,C,False
+A,E,A -> E,90.85,81.45,9.40,90.02,86.49,3.53,91.93,88.71,3.22,C,C,C,False
+A,F,A -> F,88.82,85.18,3.64,90.49,86.10,4.39,91.06,89.26,1.80,C,C,C,False
+B,A,B -> A,77.01,68.35,8.66,80.25,69.95,10.30,86.86,76.81,10.05,C,C,C,False
+B,E,B -> E,95.20,92.54,2.66,93.20,88.32,4.88,96.64,96.66,-0.02,C,C,E,True
+B,F,B -> F,88.13,89.94,-1.81,92.42,92.51,-0.09,94.35,93.85,0.50,E,E,C,True
+F,A,F -> A,66.14,63.46,2.68,61.58,55.49,6.09,73.29,75.22,-1.93,C,C,E,True
+F,B,F -> B,69.22,74.91,-5.69,72.68,76.83,-4.15,74.54,77.52,-2.98,E,E,E,False
+F,E,F -> E,84.06,88.02,-3.96,86.42,88.65,-2.23,88.86,90.64,-1.78,E,E,E,False

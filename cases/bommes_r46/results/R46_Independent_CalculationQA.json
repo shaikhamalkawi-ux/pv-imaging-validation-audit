@@ -1,0 +1,45 @@
+{
+  "project": "99pv",
+  "stage": "R46",
+  "source_doi": "10.1002/pip.3518",
+  "source_url": "https://onlinelibrary.wiley.com/doi/10.1002/pip.3518",
+  "reported_source_table": "Table 5, nine cross-plant rows; @Val0, @Val1 and Best for two classifiers",
+  "input_sha256": {
+    "pilot02_zip": "3b7ae7d930851a96aa4911149ec400e67f1978e21c05bd0fc168b829d5e2c81b",
+    "source_extraction_54": "7fbcf79eb0f27f9555d24fb86a51f1b90607220b13a32bb5f042b6085425a872"
+  },
+  "original_extracted_cells": 54,
+  "independent_tasks": 9,
+  "method_regimes_per_task": 6,
+  "comparison_count": 36,
+  "reversals_val0_and_val1_vs_best": 3,
+  "reversal_tasks": [
+    "B -> E",
+    "B -> F",
+    "F -> A"
+  ],
+  "max_gap_contrastive": {
+    "task": "F -> A",
+    "method": "contrastive",
+    "validation_selector": "val1",
+    "target_best_auroc": "73.29",
+    "other_plant_validation_auroc": "61.58",
+    "target_best_minus_validation_pp": "11.71",
+    "descriptive_not_causal": "TRUE"
+  },
+  "max_gap_crossentropy": {
+    "task": "F -> A",
+    "method": "crossentropy",
+    "validation_selector": "val1",
+    "target_best_auroc": "75.22",
+    "other_plant_validation_auroc": "55.49",
+    "target_best_minus_validation_pp": "19.73",
+    "descriptive_not_causal": "TRUE"
+  },
+  "no_heldout_raw_model_replay": true,
+  "no_new_independent_studies": true,
+  "no_prisma_rate": true,
+  "no_causal_gap_claim": true,
+  "no_standalone_cross_study_numeric_pooling": true,
+  "assumption": "Treat displayed two-decimal AUROC as descriptive printed values; difference unit percentage points; no inferential CI or test."
+}

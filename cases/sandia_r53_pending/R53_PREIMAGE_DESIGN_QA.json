@@ -1,0 +1,40 @@
+{
+  "stage": "R53_IMAGE_MODEL_NOT_YET_EXECUTED",
+  "original_metadata_source_sha256": "8fe450440d989f9aa469f0fc206c76b13021a93dbb6071ddc3a1967fd083440e",
+  "source_anonDB_bytes": 254907,
+  "source_rows": 616,
+  "original_source_modules": 438,
+  "prospective_source_complete_paired_EL_dates_within7_and_nominal_target_candidates_before_image_file_existence_check": 461,
+  "original_image_archive_access": "HOLD_NO_EL_ZIP_ACTUAL_BYTES",
+  "original_image_pixel_results": "NOT_EXECUTED",
+  "prespecified_design_SHA256": "7b5f1157a32a4e43218f87b9c4a1d83750602dab07370c24f61c47bfdb61e83a",
+  "code_sanity": "PASS_SYNTHETIC_TIFF_FEATURE_132_AND_PAIRED_264_DIMENSIONS_AND_SMALL_ZIP_PATH_RESOLVER_AND_SPLIT_GROUP_DISJOINTNESS",
+  "other_scientific_holds": [
+    "No native TIFF byte SHA",
+    "No measured image-model MAE",
+    "No defect classifier outcome",
+    "No published author paper validation replay"
+  ],
+  "payload": [
+    {
+      "path": "R53_PIXEL_EXPERIMENT_PRE_ANALYSIS_DESIGN_LOCK.md",
+      "sha256": "7b5f1157a32a4e43218f87b9c4a1d83750602dab07370c24f61c47bfdb61e83a",
+      "bytes": 6806
+    },
+    {
+      "path": "R53_CODEX_ORIGINAL_EL_ACQUISITION_AND_EXECUTION_WORK_ORDER.md",
+      "sha256": "f82ad6e292b781e87ec1a905c224981925f0549527e9c686e178c053d2e6b8e5",
+      "bytes": 5287
+    },
+    {
+      "path": "R53_READ_FIRST_AR_EN.md",
+      "sha256": "76e988de1fbf3494b7da81c38efa4e093c043d2ae3e2856b44aa5ceb5b94204d",
+      "bytes": 2261
+    },
+    {
+      "path": "src/run_R53_on_original_EL_pixels.py",
+      "sha256": "57e22f4e77eb74129f1bfdc18e3574cb8480a3a0a9d28b20cc99da00fceac944",
+      "bytes": 13250
+    }
+  ]
+}

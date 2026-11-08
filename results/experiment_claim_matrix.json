@@ -1,0 +1,83 @@
+{
+  "project": "99pv",
+  "stage": "R54_WORKING",
+  "items": [
+    {
+      "record_id": "BOMMES_2022_T5_SELECTION",
+      "source_doi": "10.1002/pip.3518",
+      "evidence_tier": "author_published_table_independently_recalculated",
+      "observation": "3 of 9 source-target tasks have checkpoint-dependent printed winner sign under source-defined selection regimes",
+      "claim_allowed": "within-study descriptive checkpoint sensitivity",
+      "claim_blocked": [
+        "causal performance inflation",
+        "author-specific hidden leakage",
+        "new source model run"
+      ],
+      "stage": "R46-R47"
+    },
+    {
+      "record_id": "SANDIA_R50_MODID_SPLITS",
+      "source_doi": "10.11578/3818365",
+      "evidence_tier": "original_616_row_CSV_Mod_ID_replayed",
+      "observed_rows": 616,
+      "physical_modules": 438,
+      "row_random_shared_Mod_ID_mean": 55.17,
+      "module_grouped_shared_Mod_ID_mean": 0,
+      "row_random_holdout_n": 123,
+      "claim_allowed": "the sampled test population differs at source-declared physical module-ID level",
+      "claim_blocked": [
+        "pixel-independent site testing",
+        "published paper leakage",
+        "model accuracy change"
+      ],
+      "stage": "R50-R51"
+    },
+    {
+      "record_id": "SANDIA_R52_METADATA_CONTROL",
+      "source_doi": "10.11578/3818365",
+      "evidence_tier": "frozen_nonimaging_Ridge_reexecuted_from_public_original_metadata",
+      "eligible_rows": 598,
+      "eligible_Mod_ID": 420,
+      "row_random_MAE_ratio_pp": 0.8649965134666924,
+      "module_grouped_MAE_ratio_pp": 0.8789932610681129,
+      "claim_allowed": "same nonimage target and predictor score contrast is descriptively small",
+      "claim_blocked": [
+        "EL image model result",
+        "causal optimism",
+        "defect detector performance"
+      ],
+      "stage": "R52"
+    },
+    {
+      "record_id": "PRATT_GIT_TREES_R50B",
+      "source_doi": "10.1016/j.sasc.2023.200048",
+      "source_repo": "https://github.com/TheMakiran/BenchmarkELimages",
+      "commit": "768b5e78596b429829b6b7aceb0ce4ac7b07788d",
+      "evidence_tier": "git_directory_filename_manifest_only",
+      "shared_candidate_filename_families_train_test": [
+        22,
+        33,
+        34
+      ],
+      "claim_allowed": "literal file-name disjointness is not candidate filename-family disjointness in those public trees",
+      "claim_blocked": [
+        "same physical module identity",
+        "publication-specific model split",
+        "published mIoU change"
+      ],
+      "stage": "R50B"
+    },
+    {
+      "record_id": "SANDIA_R53_EL_PIXELS_PENDING",
+      "source_doi": "10.11578/3818365",
+      "evidence_tier": "prospective_design_only",
+      "status": "NOT_EXECUTED_NO_EL_ZIP",
+      "claim_allowed": "code and analysis plan available",
+      "claim_blocked": [
+        "any image-based predictive score",
+        "defect-detection score"
+      ],
+      "stage": "R53"
+    }
+  ]
+}

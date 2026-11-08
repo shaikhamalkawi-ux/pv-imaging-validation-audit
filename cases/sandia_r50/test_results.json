@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "checks": 17,
+  "check_names": [
+    "N_613",
+    "G_438",
+    "D_175",
+    "sharp_repeated_row_bounds",
+    "fixed_row_splits",
+    "expected_upper_56",
+    "expected_lower_near_one",
+    "tiny_exact_hypergeom_matches_all_assignments",
+    "tiny_sharp_min",
+    "tiny_sharp_max",
+    "tiny_rows",
+    "tiny_modules",
+    "tiny_synthetic_distinct_status",
+    "tiny_multiplicity",
+    "tiny_all_group_splits_clean",
+    "tiny_raw_test_matches_expect",
+    "tiny_100_runs"
+  ],
+  "data_scope": "SYNTHETIC_UNIT_TESTS_ONLY_PLUS_OFFICIAL_COUNTS_CLOSED_FORM"
+}

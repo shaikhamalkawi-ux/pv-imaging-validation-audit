@@ -1,0 +1,21 @@
+# Original source images and restricted third-party exports must never enter Git.
+**/AnonDB.csv
+**/EL.zip
+**/IV.zip
+**/RefIV.zip
+**/*SCOPUS*RAW*
+**/*WOS*RAW*
+**/R43_PRIVATE_*
+**/R44_PRIVATE_*
+**/source_raw/
+**/private/
+**/restricted/
+**/data_original/
+**/__pycache__/
+*.pyc
+*.aux
+*.log
+*.out
+*.synctex.gz
+.ipynb_checkpoints/
+.DS_Store

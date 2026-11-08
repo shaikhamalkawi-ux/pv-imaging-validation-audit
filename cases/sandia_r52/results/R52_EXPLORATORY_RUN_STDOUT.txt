@@ -1,0 +1,75 @@
+{
+  "source_sha256": "8fe450440d989f9aa469f0fc206c76b13021a93dbb6071ddc3a1967fd083440e",
+  "exploratory_protocol_sha256": "4fc01b4a9897cd73bc59df1b13fc8b465c8d9945d48f0575f9810cae4d3f27cf",
+  "source_rows": 616,
+  "eligible": 598,
+  "run_count": 100,
+  "random_split_R52_original_Ridge_metric_reproduced_every_seed": true,
+  "results": {
+    "seen_test_rows": {
+      "mean": 57.01,
+      "range": [
+        46.0,
+        68.0
+      ],
+      "q05": 48.0,
+      "q95": 64.05
+    },
+    "unseen_test_rows": {
+      "mean": 62.99,
+      "range": [
+        52.0,
+        74.0
+      ],
+      "q05": 55.95,
+      "q95": 72.0
+    },
+    "seen_MAE_ratio_pctpoints": {
+      "mean": 0.8125391211154087,
+      "range": [
+        0.6178595421052239,
+        0.9841693056726692
+      ],
+      "q05": 0.6879868557430054,
+      "q95": 0.9549727538307676
+    },
+    "unseen_MAE_ratio_pctpoints": {
+      "mean": 0.9117977837512653,
+      "range": [
+        0.6623341375090211,
+        1.1383190947582638
+      ],
+      "q05": 0.7609618321489037,
+      "q95": 1.0764886894756365
+    },
+    "seen_module_equal_MAE_ratio_pctpoints": {
+      "mean": 0.8061477279965861,
+      "range": [
+        0.5903715230836994,
+        0.9818683750922751
+      ],
+      "q05": 0.6894594813956797,
+      "q95": 0.933832833505806
+    },
+    "unseen_module_equal_MAE_ratio_pctpoints": {
+      "mean": 0.925549272708689,
+      "range": [
+        0.667248365494124,
+        1.1465789966574773
+      ],
+      "q05": 0.7805775509513905,
+      "q95": 1.1084263753543844
+    },
+    "seen_minus_unseen_MAE_ratio_pctpoints": {
+      "mean": -0.09925866263585696,
+      "range": [
+        -0.4566322029709785,
+        0.19249623115852343
+      ],
+      "q05": -0.2930013965338078,
+      "q95": 0.10241588086374709
+    }
+  },
+  "limits": "Exploratory within-random-test stratification on true Sandia Mod_ID. No pixel or original IV curve, causal optimism, independent PV plant, actual published author split or classification accuracy. Test group composition differs.",
+  "seen_lower_than_unseen_error_seed_count": 75
+}

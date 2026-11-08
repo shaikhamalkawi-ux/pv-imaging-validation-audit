@@ -1,0 +1,8 @@
+# Pin if rerunning R52/R53 actual numerical experiments in a controlled environment.
+# The offline public provenance checker runs without installing these packages.
+numpy==2.3.5
+pandas>=2.2,<3
+scikit-learn==1.8.0
+matplotlib>=3.9,<4
+Pillow>=11,<13
+tifffile>=2025.1.10

@@ -1,5 +1,46 @@
 # PV Imaging Validation Audit — Project 99pv
 
-This is the public, author-controlled source repository for the research-development audit of photovoltaic imaging results, experimental units, data ancestry, and validation claims.
+**Scientific identity:** dataset ancestry, physical sample units, model selection and result-specific evidence support for AI-assisted photovoltaic imaging research.
 
-**Status:** working research, not a finished systematic review or a certified leakage detector. Original third-party images, private institutional search exports, and restricted data are not republished here. Reproducibility files and manuscript will be added to this repository.
+**Status:** **R54 WORKING RESEARCH — NOT submission-final, NOT a completed systematic review, NOT a certified leakage detector.**
+
+This archive publishes reproducible **code and bounded derived analyses**, including a source-verified Sandia module-ID partition experiment, a fixed **non-image** electrical-power metadata control, a pinned public EL Git-tree filename lineage study, and an exact source-table reanalysis of a published multi-plant IR result. It also contains the prospectively locked, but **not-yet-run on real images**, R53 pixel experiment.
+
+## Read the paper
+
+- [R54 main manuscript (working PDF)](paper/R54_WORKING_MAIN.pdf) — **10 pages; no final PRISMA or external validation claim**.
+- [R54 scientific supplement](paper/R54_WORKING_SUPPLEMENT.pdf) — **3 pages**, evidence matrix and exact source limitations.
+- [Archived R47 development draft](paper/archive/R47_WORKING_MANUSCRIPT_7P_READONLY.pdf).
+
+## What is actually reproduced?
+
+| Original evidence route | Executed result | Stronger claim **not** supported |
+|---|---|---|
+| Bommes (2022), source-reported Table 5 | 54 AUROC cells; 3 of 9 selection-dependent model orderings | Leakage proof, causal score inflation, new model runs |
+| Sandia PV-IV-EL official CSV (616 rows) | 100 random-row splits: 55.17 shared `Mod_ID` on average; 100 module-group splits: 0 | Published paper contamination or site-external validation |
+| Sandia fixed non-ID Ridge on 598 metadata rows | MAE: 0.8650 vs 0.8790 ratio percentage points, random/grouped | EL pixel model or defect detection; universal optimistic bias |
+| Pratt/BenchmarkELimages public dated Git trees | 0 identical train/test filenames but 22/33/34 shared parsed **candidate** filename families | Proven shared physical modules or original-paper segmentation score shift |
+| Sandia R53 EL pixel protocol | Code and prospective design only | **Any image-based score** — `EL.zip` source not yet replayed |
+
+## Reproduce
+
+See [REPRODUCE.md](REPRODUCE.md) and [case source documentation](DATA_AND_RIGHTS.md).
+
+**Offline (does not need Sandia CSV or EL images):**
+
+```bash
+python tests/verify_public.py
+python cases/benchmarkel_r50b/benchmarkel_git_tree_audit.py --selftest
+```
+
+**Full R52 metadata replay requires the exact official `AnonDB.csv` bytes**, obtained from the dataset owner and verified against SHA-256 `8fe450440d989f9aa469f0fc206c76b13021a93dbb6071ddc3a1967fd083440e`.
+
+## Source and publication boundaries
+
+- Sandia original: [PV-IV-EL dataset](https://doi.org/10.11578/3818365) — official data and imaging source. The official catalog reports 613 IV/EL measurement sets and 438 physical modules; the preserved source CSV has **616 acquisition rows** and **613 distinct IV paths**. The precise catalog counting convention is unresolved.
+- Pratt et al. (2023): [EL segmentation benchmark](https://doi.org/10.1016/j.sasc.2023.200048). Version and filename-parent interpretation require additional author-source evidence.
+- Bommes et al. (2022): [IR source paper](https://doi.org/10.1002/pip.3518). Table-5 values are credited to the original authors.
+- No original third-party EL imagery, IV traces, licensed bibliographic database exports or publisher PDFs are redistributed here.
+- Work involving AI-assisted drafting and code is transparently disclosed; independent final author verification, publisher permission review, journal/author metadata and full PRISMA remain pending.
+
+See [PUBLICATION_STATUS.md](PUBLICATION_STATUS.md), [DATA_AND_RIGHTS.md](DATA_AND_RIGHTS.md), and [CITATION.md](CITATION.md) before reusing results.
