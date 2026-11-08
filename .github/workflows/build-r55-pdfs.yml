@@ -22,6 +22,8 @@ jobs:
           cd paper
           latexmk -pdf -interaction=nonstopmode -halt-on-error R55_WORKING_MAIN.tex
           latexmk -pdf -interaction=nonstopmode -halt-on-error R55_WORKING_SUPPLEMENT.tex
+          pdfunite R55_WORKING_MAIN.pdf R55_WORKING_SUPPLEMENT.pdf R55_MAIN_PLUS_SUPPLEMENT.pdf 2>/dev/null
+          test "$(pdfinfo R55_MAIN_PLUS_SUPPLEMENT.pdf | awk '/^Pages:/ {print $2}')" -eq 13
           test "$(pdfinfo R55_WORKING_MAIN.pdf | awk '/^Pages:/ {print $2}')" -ge 8
           test "$(pdfinfo R55_WORKING_SUPPLEMENT.pdf | awk '/^Pages:/ {print $2}')" -ge 2
           ! grep -Eq 'Overfull \\hbox|Undefined control sequence|Citation.*undefined' R55_WORKING_MAIN.log
@@ -33,6 +35,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add paper/R55_WORKING_MAIN.pdf paper/R55_WORKING_SUPPLEMENT.pdf
+          git add paper/R55_WORKING_MAIN.pdf paper/R55_WORKING_SUPPLEMENT.pdf paper/R55_MAIN_PLUS_SUPPLEMENT.pdf
           git diff --cached --quiet || git commit -m "Build and verify linked R55 manuscript PDFs"
           git push origin HEAD:main

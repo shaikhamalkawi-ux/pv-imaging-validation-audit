@@ -13,6 +13,7 @@ This archive publishes reproducible **code and bounded derived analyses**, inclu
 
 - [R55 main manuscript (public-code-linked PDF)](paper/R55_WORKING_MAIN.pdf) — **working research, not final PRISMA**.
 - [R55 scientific supplement](paper/R55_WORKING_SUPPLEMENT.pdf) — source boundaries and data-vintage controls.
+- [R55 combined manuscript + supplement](paper/R55_MAIN_PLUS_SUPPLEMENT.pdf) — one 13-page reader copy.
 - [R54 baseline main PDF](paper/R54_WORKING_MAIN.pdf) and [supplement](paper/R54_WORKING_SUPPLEMENT.pdf) — original frozen development documents.
 - [Archived R47 development draft](paper/archive/R47_WORKING_MANUSCRIPT_7P_READONLY.pdf).
 
