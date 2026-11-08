@@ -1,0 +1,19 @@
+name: source-bound-public-reproducibility
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify bounded public arithmetic, records, and original-locks
+        run: python tests/verify_public.py
+      - name: Filename-parser selftest (not a physical-parent replay)
+        run: python cases/benchmarkel_r50b/benchmarkel_git_tree_audit.py --selftest
+      - name: Sandia count theorem and synthetic-only tests
+        run: python cases/sandia_r50/test_certificates.py
