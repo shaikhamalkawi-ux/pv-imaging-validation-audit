@@ -28,7 +28,7 @@ jobs:
           ! grep -Eq 'Overfull \\hbox|Undefined control sequence|Citation.*undefined' R55_WORKING_SUPPLEMENT.log
           ! pdffonts R55_WORKING_MAIN.pdf | tail -n +3 | grep -q "Type 3"
           ! pdffonts R55_WORKING_SUPPLEMENT.pdf | tail -n +3 | grep -q "Type 3"
-          pdftotext R55_WORKING_MAIN.pdf - | grep -q "github.com/shaikhamalkawi-ux"
+          pdfinfo -url R55_WORKING_MAIN.pdf | grep -q "https://github.com/shaikhamalkawi-ux/pv-imaging-validation-audit"
       - name: Commit rendered PDFs only (no GitHub workflow changes)
         run: |
           git config user.name "github-actions[bot]"
