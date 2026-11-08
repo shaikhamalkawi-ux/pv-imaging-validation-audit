@@ -3,6 +3,7 @@ on:
   push:
     paths:
       - "release-payload/R54_public_source.zip"
+      - ".github/workflows/bootstrap-r54.yml"
   workflow_dispatch:
 permissions:
   contents: write
@@ -53,6 +54,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          rm -f .github/workflows/public-checks.yml
           git add -A
           git diff --cached --quiet || git commit -m "Publish 65 audited R54 files from source-locked archive"
           git push origin HEAD:main
