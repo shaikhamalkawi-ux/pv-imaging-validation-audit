@@ -1,0 +1,50 @@
+{
+  "status": "AUTHOR_SOURCE_EXECUTED_AND_INDEPENDENT_ARITHMETIC_REPLAY",
+  "date": "2026-11-08",
+  "method": "R54 T01 complete-date stratification plus preoutcome R54 T02 Ridge(alpha=10) on official Sandia AnonDB.csv; independently numerically replayed via JavaScript Cholesky before publishing R57 source",
+  "source": {
+    "DOI": "10.11578/3818365",
+    "csv_sha256": "8fe450440d989f9aa469f0fc206c76b13021a93dbb6071ddc3a1967fd083440e",
+    "bytes": 254907,
+    "raw_rows": 616,
+    "columns": 63
+  },
+  "cohort": {
+    "eligible_rows": 598,
+    "unique_modules": 420,
+    "early_training_rows": 459,
+    "future_test_rows": 139,
+    "shared_mod_ids": 56,
+    "earlier_rows_removed_for_disjoint": 59,
+    "disjoint_early_training_rows": 400,
+    "pre_near_date_EL_metadata": 401,
+    "future_near_date_EL_metadata": 60,
+    "disjoint_pre_near_date_EL_metadata": 358
+  },
+  "results": {
+    "nameplate_constant_MAE_pctpt": 2.451411225115055,
+    "all_earlier_Ridge_MAE_pctpt": 1.3691255258791946,
+    "all_earlier_RMSE_pctpt": 1.583654974469878,
+    "all_earlier_Pmp_MAE_W": 4.396473653851403,
+    "disjoint_earlier_Ridge_MAE_pctpt": 1.6411116806152952,
+    "disjoint_earlier_RMSE_pctpt": 1.9405744394392366,
+    "disjoint_earlier_Pmp_MAE_W": 5.26839305080829,
+    "delta_disjoint_minus_all_MAE_pctpt": 0.27198615473610066
+  },
+  "size_matched_control_from_original_preoutcome_QA": {
+    "n": 100,
+    "seed_start": 20261108,
+    "seed_end": 20261207,
+    "mean_MAE_pctpt": 1.401868434709291,
+    "min_MAE_pctpt": 1.3364708432506516,
+    "max_MAE_pctpt": 1.4752553119917668,
+    "count_lower_than_disjoint": 100
+  },
+  "independent_js_numeric_replay": {
+    "ridge_all_MAE_pctpt": 1.3691255258792148,
+    "ridge_disjoint_MAE_pctpt": 1.6411116806153128,
+    "abs_error_vs_preoutcome_QA_below": 3e-14,
+    "note": "Direct original source CSV read; independent JS standardization, one-hot and centered Ridge Cholesky, not the archived Python script. 100 controls independently reported by prior T02 QA, not recomputed with JS."
+  },
+  "claim_boundary": "Non-image continuous IV power-ratio prediction; same future test, training count/composition changes, not a causal effect or image leakage estimate. Missing original EL.zip prevents R53 pixel evaluation."
+}

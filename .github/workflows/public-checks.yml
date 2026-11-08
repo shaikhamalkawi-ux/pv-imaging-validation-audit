@@ -13,6 +13,8 @@ jobs:
           python-version: '3.11'
       - name: Verify bounded public arithmetic, records, and original-locks
         run: python tests/verify_public.py
+      - name: Verify R57 original-source-independent derived arithmetic and claim gates
+        run: python tests/verify_r57_public.py
       - name: Filename-parser selftest (not a physical-parent replay)
         run: python cases/benchmarkel_r50b/benchmarkel_git_tree_audit.py --selftest
       - name: Sandia count theorem and synthetic-only tests

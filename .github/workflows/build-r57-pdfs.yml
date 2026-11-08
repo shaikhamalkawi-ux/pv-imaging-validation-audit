@@ -1,0 +1,39 @@
+name: Build source-audited R57 manuscript and supplementary PDFs
+on:
+  push:
+    paths:
+      - "paper/R57_WORKING_MAIN.tex"
+      - "paper/R57_WORKING_SUPPLEMENT.tex"
+      - ".github/workflows/build-r57-pdfs.yml"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  pdf-build-r57:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install LaTeX + preflight
+        run: |
+          sudo apt-get update -qq
+          sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -qq texlive-latex-base texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended lmodern latexmk poppler-utils
+      - name: Compile and validate R57 PDFs
+        run: |
+          cd paper
+          latexmk -pdf -interaction=nonstopmode -halt-on-error R57_WORKING_MAIN.tex
+          latexmk -pdf -interaction=nonstopmode -halt-on-error R57_WORKING_SUPPLEMENT.tex
+          pdfunite R57_WORKING_MAIN.pdf R57_WORKING_SUPPLEMENT.pdf R57_MAIN_PLUS_SUPPLEMENT.pdf
+          test "$(pdfinfo R57_WORKING_MAIN.pdf | awk '/^Pages:/ {print $2}')" -ge 10
+          test "$(pdfinfo R57_WORKING_SUPPLEMENT.pdf | awk '/^Pages:/ {print $2}')" -ge 3
+          ! grep -Eq 'Overfull \\hbox|Undefined control sequence|Citation.*undefined' R57_WORKING_MAIN.log
+          ! grep -Eq 'Overfull \\hbox|Undefined control sequence|Citation.*undefined' R57_WORKING_SUPPLEMENT.log
+          ! pdffonts R57_WORKING_MAIN.pdf | tail -n +3 | grep -q "Type 3"
+          ! pdffonts R57_WORKING_SUPPLEMENT.pdf | tail -n +3 | grep -q "Type 3"
+          pdfinfo -url R57_WORKING_MAIN.pdf | grep -q "https://github.com/shaikhamalkawi-ux/pv-imaging-validation-audit"
+      - name: Commit verified rendered PDFs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add paper/R57_WORKING_MAIN.pdf paper/R57_WORKING_SUPPLEMENT.pdf paper/R57_MAIN_PLUS_SUPPLEMENT.pdf
+          git diff --cached --quiet || git commit -m "Render and verify R57 main plus supplement PDFs"
+          git push origin HEAD:main

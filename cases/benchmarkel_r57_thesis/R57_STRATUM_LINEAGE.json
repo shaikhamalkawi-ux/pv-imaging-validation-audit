@@ -1,0 +1,107 @@
+{
+  "status": "UPSTREAM_GIT_SUBTREE_EXACT_SHA_NONTRUNCATED_INDEPENDENT_RECOUNT",
+  "date": "2026-11-08",
+  "upstream_commit": "768b5e78596b429829b6b7aceb0ce4ac7b07788d",
+  "original_thesis": {
+    "author": "Lawrence Pratt",
+    "date": "2024-05-29",
+    "handle": "https://hdl.handle.net/10539/42163",
+    "official_pdf": "https://wiredspace.wits.ac.za/bitstreams/c01c5128-cb9b-4c7c-af60-5b321801b156/download",
+    "evidence": "Chapter 1 dataset release to study family, Chapter 7 CFVS exemplar identity and 582/478/54/50 original allocation"
+  },
+  "strata": [
+    {
+      "release": "20211104",
+      "source": "ARTS",
+      "shared_keys": 8,
+      "matched_test": 9,
+      "parsed_test": 13
+    },
+    {
+      "release": "20211104",
+      "source": "CFVS",
+      "shared_keys": 8,
+      "matched_test": 9,
+      "parsed_test": 18
+    },
+    {
+      "release": "20211104",
+      "source": "CSIR",
+      "shared_keys": 6,
+      "matched_test": 6,
+      "parsed_test": 8
+    },
+    {
+      "release": "20220723",
+      "source": "ARTS",
+      "shared_keys": 10,
+      "matched_test": 10,
+      "parsed_test": 18
+    },
+    {
+      "release": "20220723",
+      "source": "CFVS",
+      "shared_keys": 12,
+      "matched_test": 14,
+      "parsed_test": 22
+    },
+    {
+      "release": "20220723",
+      "source": "CSIR",
+      "shared_keys": 11,
+      "matched_test": 11,
+      "parsed_test": 18
+    },
+    {
+      "release": "20221008",
+      "source": "ARTS",
+      "shared_keys": 10,
+      "matched_test": 10,
+      "parsed_test": 18
+    },
+    {
+      "release": "20221008",
+      "source": "CFVS",
+      "shared_keys": 11,
+      "matched_test": 13,
+      "parsed_test": 23
+    },
+    {
+      "release": "20221008",
+      "source": "CSIR",
+      "shared_keys": 13,
+      "matched_test": 13,
+      "parsed_test": 23
+    }
+  ],
+  "totals": [
+    {
+      "release": "20211104",
+      "train": 478,
+      "val": 54,
+      "test": 50,
+      "shared_keys": 22,
+      "matched_test": 24,
+      "unparsed_test": 11
+    },
+    {
+      "release": "20220723",
+      "train": 2044,
+      "val": 65,
+      "test": 66,
+      "shared_keys": 33,
+      "matched_test": 35,
+      "unparsed_test": 8
+    },
+    {
+      "release": "20221008",
+      "train": 2212,
+      "val": 70,
+      "test": 72,
+      "shared_keys": 34,
+      "matched_test": 36,
+      "unparsed_test": 8
+    }
+  ],
+  "caveat": "Exact crop names disjoint, suffix-normalized SOURCE KEYS can cross partitions. One named CFVS exemplar explicitly encodes module number and cell row/col in author thesis, but original physical module serials for all source families, pixel bytes and 2023 trained experiment manifest remain unverified. No pixel score, causal leakage or classification shift."
+}
