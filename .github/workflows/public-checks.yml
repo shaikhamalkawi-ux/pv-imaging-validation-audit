@@ -15,6 +15,8 @@ jobs:
         run: python tests/verify_public.py
       - name: Verify R57 original-source-independent derived arithmetic and claim gates
         run: python tests/verify_r57_public.py
+      - name: Syntax-check independent standard-library Node Ridge Cholesky code
+        run: node --check cases/sandia_r57_temporal/independent_ridge_cholesky.mjs
       - name: Filename-parser selftest (not a physical-parent replay)
         run: python cases/benchmarkel_r50b/benchmarkel_git_tree_audit.py --selftest
       - name: Sandia count theorem and synthetic-only tests

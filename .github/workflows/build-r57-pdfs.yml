@@ -30,10 +30,29 @@ jobs:
           ! pdffonts R57_WORKING_MAIN.pdf | tail -n +3 | grep -q "Type 3"
           ! pdffonts R57_WORKING_SUPPLEMENT.pdf | tail -n +3 | grep -q "Type 3"
           pdfinfo -url R57_WORKING_MAIN.pdf | grep -q "https://github.com/shaikhamalkawi-ux/pv-imaging-validation-audit"
+
+      - name: Build rights-bounded R57 portable review ZIP
+        run: |
+          mkdir -p release-payload
+          zip -q -X release-payload/R57_MAIN_SUPPLEMENT_CODE_REVIEW.zip \
+            paper/R57_WORKING_MAIN.pdf paper/R57_WORKING_SUPPLEMENT.pdf paper/R57_MAIN_PLUS_SUPPLEMENT.pdf \
+            paper/R57_WORKING_MAIN.tex paper/R57_WORKING_SUPPLEMENT.tex \
+            paper/figures/figure_bommes_condition.pdf paper/figures/figure_sandia_module_overlap.pdf \
+            cases/sandia_r57_temporal/run_from_official_AnonDB.py \
+            cases/sandia_r57_temporal/independent_ridge_cholesky.mjs \
+            cases/sandia_r57_temporal/R57_AGGREGATE_EVIDENCE.json \
+            cases/benchmarkel_r57_thesis/R57_STRATUM_LINEAGE.json \
+            cases/benchmarkel_r57_thesis/REPRODUCE_STRATUM_AND_THESIS.md \
+            tests/verify_r57_public.py docs/R57_SCIENTIFIC_ADMISSION_AND_QA.md \
+            README.md REPRODUCE.md PUBLICATION_STATUS.md DATA_AND_RIGHTS.md LICENSE_STATUS.md CITATION.md requirements.txt
+          unzip -t -qq release-payload/R57_MAIN_SUPPLEMENT_CODE_REVIEW.zip
+          ! unzip -Z -1 release-payload/R57_MAIN_SUPPLEMENT_CODE_REVIEW.zip | grep -Eq 'AnonDB.csv|EL.zip|\\.bib$|private'
+          sha256sum release-payload/R57_MAIN_SUPPLEMENT_CODE_REVIEW.zip > release-payload/R57_MAIN_SUPPLEMENT_CODE_REVIEW_SHA256.txt
+          cat release-payload/R57_MAIN_SUPPLEMENT_CODE_REVIEW_SHA256.txt
       - name: Commit verified rendered PDFs
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add paper/R57_WORKING_MAIN.pdf paper/R57_WORKING_SUPPLEMENT.pdf paper/R57_MAIN_PLUS_SUPPLEMENT.pdf
+          git add paper/R57_WORKING_MAIN.pdf paper/R57_WORKING_SUPPLEMENT.pdf paper/R57_MAIN_PLUS_SUPPLEMENT.pdf release-payload/R57_MAIN_SUPPLEMENT_CODE_REVIEW.zip release-payload/R57_MAIN_SUPPLEMENT_CODE_REVIEW_SHA256.txt
           git diff --cached --quiet || git commit -m "Render and verify R57 main plus supplement PDFs"
           git push origin HEAD:main

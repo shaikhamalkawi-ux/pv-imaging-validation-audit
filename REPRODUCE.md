@@ -10,6 +10,8 @@
 
 ```bash
 python tests/verify_public.py
+python tests/verify_r57_public.py
+node --check cases/sandia_r57_temporal/independent_ridge_cholesky.mjs
 python cases/benchmarkel_r50b/benchmarkel_git_tree_audit.py --selftest
 python cases/sandia_r50/test_certificates.py
 ```
@@ -44,6 +46,18 @@ python cases/sandia_r52/src/make_figures.py
 ```
 
 Compare to `cases/sandia_r52/results/` and `cases/sandia_r52/qa/`. No model was trained on EL TIFF pixels in R52.
+
+### R57 fixed-future-date Sandia source-only/non-imaging replay
+
+R57 preserves the original source bytes and the frozen 9 February 2021 date cutoff. Obtain authentic `AnonDB.csv` from the cited dataset and independently SHA-check it before replay. The Python path reproduces the original outcome and all 100 prespecified size-matched controls; the independent Node implementation uses only built-in Node.js numeric routines (centering, training-only imputation and standardization, one-hot encoding, and Ridge Cholesky) to cross-check the two primary MAEs.
+
+```bash
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python cases/sandia_r57_temporal/run_from_official_AnonDB.py /path/to/AnonDB.csv --out r57_aggregate_only.json
+node cases/sandia_r57_temporal/independent_ridge_cholesky.mjs /path/to/AnonDB.csv
+python tests/verify_r57_public.py
+```
+
+Results must refer to the continuous measured-IV electrical power ratio, not EL pixels, fault labels, physical site transfer or a causal effect of parent overlap. The scripts print only aggregate outputs and do not redistribute source CSV or per-row targets. For the original-author Pratt thesis source-stratified audit, consult [R57 thesis evidence](cases/benchmarkel_r57_thesis/REPRODUCE_STRATUM_AND_THESIS.md).
 
 ### Prospective, NOT yet performed, R53 image experiment
 
