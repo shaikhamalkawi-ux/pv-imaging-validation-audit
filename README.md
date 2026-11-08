@@ -2,14 +2,18 @@
 
 **Scientific identity:** dataset ancestry, physical sample units, model selection and result-specific evidence support for AI-assisted photovoltaic imaging research.
 
-**Status:** **R54 WORKING RESEARCH — NOT submission-final, NOT a completed systematic review, NOT a certified leakage detector.**
+**Status:** **R55 WORKING RESEARCH — public code and reproducibility checks LIVE; NOT submission-final, NOT a completed systematic review, NOT a certified leakage detector.**
 
 This archive publishes reproducible **code and bounded derived analyses**, including a source-verified Sandia module-ID partition experiment, a fixed **non-image** electrical-power metadata control, a pinned public EL Git-tree filename lineage study, and an exact source-table reanalysis of a published multi-plant IR result. It also contains the prospectively locked, but **not-yet-run on real images**, R53 pixel experiment.
 
+
+**Public code source:** [GitHub repository](https://github.com/shaikhamalkawi-ux/pv-imaging-validation-audit); audited R54 65-file source snapshot: [commit `b0bf66f96700`](https://github.com/shaikhamalkawi-ux/pv-imaging-validation-audit/commit/b0bf66f9670000297986569dab6de85d55bec822). The [public reproducibility checks](https://github.com/shaikhamalkawi-ux/pv-imaging-validation-audit/actions/runs/42437282067) passed. A GitHub check validates source-table arithmetic, declared metadata and synthetic tests; it does **not** substitute for raw Sandia images or a completed independent eligibility review.
+
 ## Read the paper
 
-- [R54 main manuscript (working PDF)](paper/R54_WORKING_MAIN.pdf) — **10 pages; no final PRISMA or external validation claim**.
-- [R54 scientific supplement](paper/R54_WORKING_SUPPLEMENT.pdf) — **3 pages**, evidence matrix and exact source limitations.
+- [R55 main manuscript (public-code-linked PDF)](paper/R55_WORKING_MAIN.pdf) — **working research, not final PRISMA**.
+- [R55 scientific supplement](paper/R55_WORKING_SUPPLEMENT.pdf) — source boundaries and data-vintage controls.
+- [R54 baseline main PDF](paper/R54_WORKING_MAIN.pdf) and [supplement](paper/R54_WORKING_SUPPLEMENT.pdf) — original frozen development documents.
 - [Archived R47 development draft](paper/archive/R47_WORKING_MANUSCRIPT_7P_READONLY.pdf).
 
 ## What is actually reproduced?
@@ -43,4 +47,4 @@ python cases/benchmarkel_r50b/benchmarkel_git_tree_audit.py --selftest
 - No original third-party EL imagery, IV traces, licensed bibliographic database exports or publisher PDFs are redistributed here.
 - Work involving AI-assisted drafting and code is transparently disclosed; independent final author verification, publisher permission review, journal/author metadata and full PRISMA remain pending.
 
-See [PUBLICATION_STATUS.md](PUBLICATION_STATUS.md), [DATA_AND_RIGHTS.md](DATA_AND_RIGHTS.md), and [CITATION.md](CITATION.md) before reusing results.
+See [PUBLICATION_STATUS.md](PUBLICATION_STATUS.md), [DATA_AND_RIGHTS.md](DATA_AND_RIGHTS.md), [CITATION.md](CITATION.md), and the preserved [R54 integrity register](MANIFEST_R54_SHA256.json) before reusing results.

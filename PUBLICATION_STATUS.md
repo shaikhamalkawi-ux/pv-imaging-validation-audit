@@ -1,4 +1,4 @@
-# Scientific publication gate — R54, 8 November 2026
+# Scientific publication gate — R55, 8 November 2026
 
 **R54 is a working manuscript and code deposit candidate, not a submitted or accepted paper.** We have no finished PRISMA flow, final included-study denominator, second independent human eligibility screen or independently certified physical module-to-image mapping for the full reviewed literature. Frozen institutional Scopus/WoS/IEEE original search files remain private. Last independently accepted source-screen checkpoint is W3 2588 and W4 1375 out of two assignment lists of 2588 each, a combined **3963/5176 workload records**, not 3963 included studies. W4 Batch28 initial AI routing was locally completed but its raw Drive custody remains HOLD, so counts are not promoted.
 
@@ -18,3 +18,6 @@
 - Repository's permanent archive DOI (none issued).
 
 DO NOT publish a downstream claim of confirmed leakage or measured PV defect-detector performance inflation. A public GitHub code repository is a transparency aid, not a scientific validation certificate.
+
+## Public code deposit (verified 8 November 2026)
+The source repository is [shaikhamalkawi-ux/pv-imaging-validation-audit](https://github.com/shaikhamalkawi-ux/pv-imaging-validation-audit), verified public. Its independently SHA-pinned R54 code snapshot is [commit b0bf66f9670000297986569dab6de85d55bec822](https://github.com/shaikhamalkawi-ux/pv-imaging-validation-audit/commit/b0bf66f9670000297986569dab6de85d55bec822); the public checks passed in workflow run [42437282067](https://github.com/shaikhamalkawi-ux/pv-imaging-validation-audit/actions/runs/42437282067). R55 updates code-linking and claim-boundary text without changing any original numerical dataset or experimental outputs. No Zenodo/software release DOI is claimed.

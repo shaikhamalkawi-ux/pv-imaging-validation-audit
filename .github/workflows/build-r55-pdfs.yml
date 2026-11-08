@@ -1,0 +1,38 @@
+name: Build public-linked R55 manuscript PDFs
+on:
+  push:
+    paths:
+      - "paper/R55_WORKING_MAIN.tex"
+      - "paper/R55_WORKING_SUPPLEMENT.tex"
+      - ".github/workflows/build-r55-pdfs.yml"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  pdf-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install LaTeX and PDF preflight packages
+        run: |
+          sudo apt-get update -qq
+          sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -qq texlive-latex-base texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended lmodern latexmk poppler-utils
+      - name: Compile linked manuscript and supplement from sources
+        run: |
+          cd paper
+          latexmk -pdf -interaction=nonstopmode -halt-on-error R55_WORKING_MAIN.tex
+          latexmk -pdf -interaction=nonstopmode -halt-on-error R55_WORKING_SUPPLEMENT.tex
+          test "$(pdfinfo R55_WORKING_MAIN.pdf | awk '/^Pages:/ {print $2}')" -ge 8
+          test "$(pdfinfo R55_WORKING_SUPPLEMENT.pdf | awk '/^Pages:/ {print $2}')" -ge 2
+          ! grep -Eq 'Overfull \\hbox|Undefined control sequence|Citation.*undefined' R55_WORKING_MAIN.log
+          ! grep -Eq 'Overfull \\hbox|Undefined control sequence|Citation.*undefined' R55_WORKING_SUPPLEMENT.log
+          ! pdffonts R55_WORKING_MAIN.pdf | tail -n +3 | grep -q "Type 3"
+          ! pdffonts R55_WORKING_SUPPLEMENT.pdf | tail -n +3 | grep -q "Type 3"
+          pdftotext R55_WORKING_MAIN.pdf - | grep -q "github.com/shaikhamalkawi-ux"
+      - name: Commit rendered PDFs only (no GitHub workflow changes)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add paper/R55_WORKING_MAIN.pdf paper/R55_WORKING_SUPPLEMENT.pdf
+          git diff --cached --quiet || git commit -m "Build and verify linked R55 manuscript PDFs"
+          git push origin HEAD:main

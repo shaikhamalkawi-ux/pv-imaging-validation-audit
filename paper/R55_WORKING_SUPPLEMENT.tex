@@ -1,0 +1,99 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[margin=.88in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern,booktabs,tabularx,array,amsmath,amssymb,enumitem,microtype}
+\usepackage[hidelinks]{hyperref}
+\usepackage[font=small,labelfont=bf]{caption}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{document}
+\begin{center}
+{\Large \bfseries Supplementary Methods and Evidence Register}\par
+\medskip
+{\normalsize From Photovoltaic Imaging Scores to Source-Supported Claims}\par
+\medskip
+8 November 2026 -- R55 public-code-linked development supplement -- \textbf{not submission-final}
+\end{center}
+\section{Scope and audit tiers}
+This supplement records original-source and algorithmic evidence supporting a purposive methodology demonstration. It does \emph{not} describe a completed systematic review, independent human eligibility adjudication, or a field-validation experiment. The four executed case families have mutually different evidentiary status: (i) printed-table reanalysis, (ii) primary metadata source-ID replay, (iii) non-imaging regression on original numeric metadata and (iv) pinned Git-directory filename genealogy. A fifth prospective EL-pixel experiment is design-only and must not be counted as an executed result.
+
+\begin{table}[ht]\centering\small
+\caption{Reproducibility and strength of each source-reported observation.}
+\begin{tabularx}{\linewidth}{@{}p{2.5cm}p{2.3cm}X@{}}\toprule
+Case & Executed evidence & Stronger inference not licensed \\\midrule
+Bommes (2022) & Recalculated 54 reported Table-5 AUROC values & New model run; inferred leakage; independent model-selection effect \\
+Sandia (R50--R51) & Raw CSV SHA, 616 acquisition rows and \texttt{Mod\_ID} split counts & All original TIFF image ancestry, new PV site transfer \\
+Sandia (R52) & Frozen Ridge model on 598 metadata rows & EL imaging model; defect segmentation; causal performance inflation \\
+Pratt repository & Public Git directory trees, three versions & Verified physical modules from filename families; exact journal-model split \\
+Sandia (R53) & Code and preanalysis protocol tests only & Any claim of an EL pixel-based model result \\
+\bottomrule\end{tabularx}
+\end{table}
+
+\section{Immutable source identifiers}
+\begin{table}[ht]\centering\footnotesize
+\caption{Original sources and intentionally narrow checksum claims.}
+\begin{tabularx}{\linewidth}{@{}p{2.6cm}X@{}}\toprule
+Source & Stable check or locator \\\midrule
+Sandia/OEDI PV-IV-EL & DOI 10.11578/3818365; \texttt{AnonDB.csv}; SHA-256: \texttt{8fe450440d989f9a} (SHA-256 prefix) \\
+Bommes 2022 source-extract & DOI 10.1002/pip.3518, Table 5, 54 source cells; extracted-CSV SHA-256: \texttt{7fbcf79eb0f27f95} (SHA-256 prefix) \\
+Pratt benchmark repo & DOI 10.1016/j.sasc.2023.200048; author Git tree commit \texttt{768b5e78596b429829b6b7aceb0ce4ac7b07788d} \\
+R52 prospective lock & Locally generated metadata-control preoutcome specification SHA-256: \texttt{dba0dc2424c8a2bc} (SHA-256 prefix) \\
+R53 pixel-test status & Prospective original-EL protocol, source \texttt{EL.zip} not recovered; no executed TIFF scores \\
+\bottomrule\end{tabularx}
+\end{table}
+
+Full 64-character SHA-256 digests are retained in the release machine-readable source lock; printed prefixes are for visual orientation only. Checksum provenance authenticates a particular source file, not correctness of a claimed physical acquisition parent or validity of a model. The original Sandia source is to be obtained from the public dataset landing page. Restricted institutional search exports are not in the public code package.
+
+\section{Sandia source-row and acquisition units}
+The original metadata CSV includes 616 acquisition rows, 438 unique \texttt{Mod\_ID}s and 613 unique \texttt{IVPath} strings. The module multiplicity histogram is 269 singletons, 160 pairs and nine triplets; thus 169 modules recur and 347 of 616 rows belong to repeated-module groups. There are no fully duplicate CSV rows.
+
+Exactly three different row pairs reuse their IV file path and have different EL acquisition records; the affected source-identified modules are 3236, 4849 and 3346. This produces a numerical match between 613 unique IV paths and the official catalog headline of 613 sets, without proving the catalog writers' counting convention. Deduplicating any of the three pairs would omit an EL observation; all 616 records are retained for the primary source count.
+
+Exactly 600 rows link both high- and low-injection EL images, corresponding to 435 modules and 599 distinct IV paths. Of these 600, 479 report an absolute EL-to-IV acquisition-date lag of at most seven days and 121 exceed that limit. These are link/date checks on the metadata \emph{only}, not verified image existence, pixel hash equality or contemporaneous physical damage labels.
+
+For a random 493/123 source-row split, a given module with $k$ rows has the exact split-crossing probability
+\begin{equation}
+ 1-\frac{\binom{493}{k}+\binom{123}{k}}{\binom{616}{k}}.
+\end{equation}
+Summing over the observed module multiplicity histogram gives 55.5425324675 expected shared module IDs. Under 100 seeded row splits (seeds 20261108 through 20261207), the observed mean is 55.17 (range 38--70); the mean fraction of held-out rows with \texttt{Mod\_ID} in training is 0.453821. The 100 grouped source splits use exactly the same row universe and holdout count but enforce zero \texttt{Mod\_ID} intersection.
+
+\section{Prespecified non-imaging prediction control}
+R52's source-independent, preoutcome eligibility rule selects 598 rows (420 modules) with nonmissing and positive measured \texttt{Pmp\_(W)}, nonmissing/positive \texttt{Nameplate\_Pmp\_(W)}, interpretable exposure duration and the fixed predictor covariates. Eighteen rows fail eligibility; no target-based sample pruning follows model results. The target is the measured electrical ratio $P_{\rm mp,IV}/P_{\rm mp,nameplate}$, not an EL defect mask.
+
+Each of 100 seeds forms a row-random and a separate whole-\texttt{Mod\_ID} 478/120 split, with fitting and median imputation/scaling inside training only. The fixed Ridge $\alpha=10$ uses manufacturer, product model and wafer class plus original nameplate rating, module area, exposure duration and exposure step. Test values, IV current/voltage outputs and module identity are excluded from predictor features. The nameplate-only prediction $\hat y=1$ is the basic reference.
+
+\begin{table}[ht]\centering\small
+\caption{Mean MAE in percentage points of measured IV power ratio; descriptive, not independent tests.}
+\begin{tabularx}{\linewidth}{@{}Xrr@{}}\toprule
+Prediction/control & Row-random & Whole-module \\\midrule
+Constant nameplate & 1.9735 & 1.9656 \\
+Fixed non-ID metadata Ridge & 0.8650 & 0.8790 \\
+Retrospective same-ID lookup (negative control) & 0.9273 & 0.8790 \\
+Strict earlier-IV same-ID lookup (negative control) & 0.8967 & 0.8790 \\
+\bottomrule\end{tabularx}
+\end{table}
+
+The retrospective lookup can use same-module target information from future or same dates and is \emph{not} a deployable predictor; its worse result is retained without suppression. The random-versus-grouped Ridge difference is $-0.0140$ ratio percentage points, but the two splits have different module composition. Within the row-random holdout, a postprimary exploration grouped test errors by whether the source module appeared in training: 0.8125 versus 0.9118 percentage points (seen versus unseen). This contrast is observational and confounded by source composition; it is not a causal leakage penalty. The 100 seeds are repeated splits of one data set and are not independent studies.
+
+\section{EL benchmark public-directory genealogy}
+The author-hosted Pratt et al. repository was inspected at fixed Git commit/tree identifiers. No identical literal crop filenames cross train/test partitions in any inspected version. A parser restricted to the suffix pattern \texttt{\_r[number]\_c[number]} produces the following \emph{candidate filename-family}, not module-ID, matches.
+\begin{table}[ht]\centering\small
+\caption{Original Git directory evidence; public name-based signals, not pixel-based validation.}
+\begin{tabularx}{\linewidth}{@{}Xrrrr@{}}\toprule
+Release & Train entries & Test entries & Shared parsed families & Test names with family in training \\\midrule
+2021-11-04 & 478 originals & 50 & 22 & 24/50 \\
+2022-07-23 & 2044 incl. aug. & 66 & 33 & 35/66 \\
+2022-10-08 & 2212 incl. aug. & 72 & 34 & 36/72 \\
+\bottomrule\end{tabularx}
+\end{table}
+
+In the 2021 release, separate augmented-train filenames number 1434 and normalize to all 478 original train crops, exactly three augmentation descendants per original. The source-label meaning of ARTS/CFVS/CSIR naming prefixes and matching of the paper's published 593 cases to the inspected dated release remain unresolved. No conclusion concerning any published model's split leakage or score is drawn.
+
+\section{Outstanding gates and software publication status}
+The official original Sandia EL TIFF archive (\texttt{EL.zip}, about 2 GB) has not been acquired by the R53 analysis. Its planned normalized two-channel pixel-feature Ridge is design-only. Its source-link, date-lag and model-selection gates are fixed before any image result; a code compilation or synthetic fixture does not count as a source-trained prediction.
+
+The systematic literature frame contains 21 frozen provider exports with 8326 rows, 5440 provisional bibliographic identities, and incomplete first screening (accepted workload checkpoint 3963/5176). There is no adjudicated included-study count or completed PRISMA/PRISMA-S flow and no independent second human screen. The current paper and source package are \textbf{development artifacts only}. A live public reproducibility repository is available at \url{https://github.com/shaikhamalkawi-ux/pv-imaging-validation-audit}, with the original R54 65-file source snapshot pinned to commit \texttt{b0bf66f9670000297986569dab6de85d55bec822}. Its offline CI tests passed; only those tests, not raw EL image-model inference or the full PRISMA workflow, are certified by that CI result. No repository DOI or final paper DOI has been assigned. The original Sandia dataset website currently lists approximately 2~GB in total while the OEDI landing page lists the EL imaging archive at 16.66~GB; neither size is adopted as verified archive bytes because the original \texttt{EL.zip} has not been independently acquired. This is a source-distribution discrepancy for future acquisition, not a corrected dataset estimate. Original article citation and release licensing metadata must be confirmed before journal submission.
+
+\end{document}
